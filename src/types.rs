@@ -5,6 +5,6 @@ pub struct Command {
   pub args: UserInput,
 }
 
-pub enum Commands {
-  Track(String)
+pub struct DownloadTrack {
+  pub url: String
 }

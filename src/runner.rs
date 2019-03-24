@@ -1,9 +1,18 @@
-use super::types::Commands;
+use super::types::{Command, DownloadTrack};
 
-pub fn run(command: super::types::Command) -> () {
-  let track: String = String::from("track");
+pub fn run(command: Command) -> () {
+  let track: &str = "track";
 
-  match command.name {
-    track => super::commands::download_track(Commands::Track(command.args.first().unwrap().to_string()))
+  if (track == &command.name) {
+    let structure: DownloadTrack = DownloadTrack { url: command.args.first().unwrap().to_string() };
+    super::commands::download_track(structure)
   }
+
+//  match command.name.as_str() {
+//    track => println!("TRACK?"),
+//      let structure: DownloadTrack = DownloadTrack { url: command.args.first().unwrap().to_string() };
+//      super::commands::download_track(structure)
+//    }
+//    _ => println!("Incorrect command")
+//  }
 }
