@@ -11,7 +11,7 @@ pub fn skip_file(args: env::Args) -> Option<types::UserInput> {
   }
 }
 
-pub fn to_hash(args: types::UserInput) -> types::Command {
+pub fn to_command(args: types::UserInput) -> types::Command {
   types::Command {
     name: args.first().unwrap().to_string(),
     args: Vec::new(),

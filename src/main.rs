@@ -7,6 +7,6 @@ mod types;
 fn main() {
     match args::skip_file(env::args()) {
         None => println!("Woops"),
-        Some(args) => commands::run(args::to_hash(args)),
+        Some(args) => commands::run(args::to_command(args)),
     }
 }
