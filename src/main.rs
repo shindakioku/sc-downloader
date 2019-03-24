@@ -1,3 +1,13 @@
+use std::env;
+
+mod args;
+mod types;
+
 fn main() {
-    println!("Hello, world!");
+    match args::skip_file(env::args()) {
+        None => println!("Woops"),
+        Some(args) => handle(args::to_hash(args)),
+    }
 }
+
+fn handle(command: types::Command) {}
