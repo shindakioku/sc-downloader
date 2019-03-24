@@ -4,6 +4,7 @@ mod args;
 mod runner;
 mod types;
 mod commands;
+mod sc;
 
 fn main() {
     match args::skip_file(env::args()) {
