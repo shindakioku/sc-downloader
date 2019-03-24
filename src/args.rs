@@ -4,10 +4,11 @@ use super::types;
 
 pub fn skip_file(args: env::Args) -> Option<types::UserInput> {
   let args: types::UserInput = args.collect();
+  let args: types::UserInput = args.iter().skip(1).rev().cloned().collect();
 
   match args.len() {
     0 => None,
-    _ => Some(args.iter().skip(1).rev().cloned().collect()),
+    _ => Some(args),
   }
 }
 
